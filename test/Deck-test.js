@@ -13,4 +13,8 @@ describe('Deck', function() {
   it('should take an array of cards as an argument', function() {
     expect(deck.cards).to.equal(cards);
   });
+
+  it('should be able to tell how many cards are in the deck', function() {
+    expect(deck.countCards()).to.equal(3);
+  })
 })
