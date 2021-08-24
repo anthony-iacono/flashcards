@@ -10,5 +10,7 @@ describe('Deck', function() {
   const cards = [card1, card2, card3]
   const deck = new Deck(cards);
 
-
+  it('should take an array of cards as an argument', function() {
+    expect(deck.cards).to.equal(cards);
+  });
 })
