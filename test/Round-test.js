@@ -4,6 +4,7 @@ const expect = chai.expect;
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Turn = require('../src/Turn');
+const Round = require('../src/Round');
 
 describe('Round', function() {
   const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -17,7 +18,8 @@ describe('Round', function() {
     round = new Round(deck);
   })
 
-  it('should hold the first card in the deck as the current card at the start of the round', function() {
+  it.only('should hold the first card in the deck as the current card at the start of the round', function() {
+    console.log(round);
     expect(round.currentCard).to.equal(card1);
   });
 
@@ -28,7 +30,7 @@ describe('Round', function() {
   it('should be able to return the current card', function() {
     const currentCard = round.returnCurrentCard();
 
-    expect(currentCard).to.equal(card1);
+    expect(currentCard).to.equal(deck[0]);
   });
 
   describe('takeTurn', function() {
