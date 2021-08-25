@@ -73,4 +73,13 @@ describe('Round', function() {
 
     expect(percentCorrect).to.equal(100);
   })
+
+  it('should be able to end the round', function() {
+    round.takeTurn('sea otter');
+    round.takeTurn('gallbladder');
+    round.takeTurn('Fitzgerald');
+    const message = round.endRound();
+
+    expect(message).to.equal(`** Round over! ** You answered ${percentCorrect}% of the questions correctly!`);
+  });
 });
