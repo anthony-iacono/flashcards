@@ -17,13 +17,17 @@ class Round {
     this.turns++;
     const feedback = turn.giveFeedback();
     if (!turn.evaluateGuess()) {
-          console.log(this.currentCard);
       this.incorrectGuesses.push(this.currentCard.id)
     }
 
     this.currentCard = this.deck.cards[this.turns];
 
     return feedback;
+  }
+
+  calculatePercentCorrect() {
+    const percentIncorrect = this.incorrectGuesses.length / this.deck.cards.length;
+    return Math.round((1 - percentIncorrect) * 100);
   }
 }
 

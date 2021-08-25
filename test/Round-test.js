@@ -59,9 +59,7 @@ describe('Round', function() {
     });
 
     it('should evaluate an incorrect guess, store its id, and provide feedback', function() {
-      console.log('current card id: ', round.currentCard.id)
       const feedback = round.takeTurn('pug');
-      console.log('feedback: ', feedback)
 
       expect(feedback).to.equal('incorrect!');
       expect(round.incorrectGuesses.length).to.equal(1);
@@ -69,7 +67,7 @@ describe('Round', function() {
     });
   });
 
-  it.skip('should calculate and return the percentage of correct guesses', function() {
+  it('should calculate and return the percentage of correct guesses', function() {
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');
     round.takeTurn('Fitzgerald');
