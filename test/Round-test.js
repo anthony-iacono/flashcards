@@ -34,19 +34,19 @@ describe('Round', function() {
 
   describe('takeTurn', function() {
 
-    it.only('should update turns count when a turn is taken', function () {
+    it('should update turns count when a turn is taken', function () {
       round.takeTurn('sea otter');
 
       expect(round.turns).to.equal(1);
     });
 
-    it.only('should update turns count whether guess is correct or incorrect', function() {
+    it('should update turns count whether guess is correct or incorrect', function() {
       round.takeTurn('pug');
 
       expect(round.turns).to.equal(1);
     });
 
-    it.only('should update the current card to be the next card in the deck', function() {
+    it('should update the current card to be the next card in the deck', function() {
       round.takeTurn('sea otter');
 
       expect(round.currentCard).to.equal(card2);
@@ -58,15 +58,18 @@ describe('Round', function() {
       expect(feedback).to.equal('correct!');
     });
 
-    it('should evaluate, store the id of, and provide feedback for incorrect guesses', function() {
+    it('should evaluate an incorrect guess, store its id, and provide feedback', function() {
+      console.log('current card id: ', round.currentCard.id)
       const feedback = round.takeTurn('pug');
+      console.log('feedback: ', feedback)
 
       expect(feedback).to.equal('incorrect!');
-      expect(round.incorrectGuesses).to.equal('1');
+      expect(round.incorrectGuesses.length).to.equal(1);
+      expect(round.incorrectGuesses[0]).to.equal(1);
     });
   });
 
-  it('should calculate and return the percentage of correct guesses', function() {
+  it.skip('should calculate and return the percentage of correct guesses', function() {
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');
     round.takeTurn('Fitzgerald');
@@ -75,7 +78,7 @@ describe('Round', function() {
     expect(percentCorrect).to.equal(100);
   })
 
-  it('should be able to end the round', function() {
+  it.skip('should be able to end the round', function() {
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');
     round.takeTurn('Fitzgerald');
