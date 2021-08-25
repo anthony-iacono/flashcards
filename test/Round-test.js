@@ -76,12 +76,12 @@ describe('Round', function() {
     expect(percentCorrect).to.equal(100);
   })
 
-  it.skip('should be able to end the round', function() {
+  it('should be able to end the round', function() {
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');
     round.takeTurn('Fitzgerald');
     const message = round.endRound();
 
-    expect(message).to.equal(`** Round over! ** You answered ${percentCorrect}% of the questions correctly!`);
+    expect(message).to.equal(`** Round over! ** You answered 100% of the questions correctly!`);
   });
 });
