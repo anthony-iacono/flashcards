@@ -51,5 +51,26 @@ describe('Round', function() {
       expect(round.currentCard).to.equal(card2);
     });
 
+    it('should evaluate correct guesses and provide feedback', function() {
+      const feedback = round.takeTurn('sea otter');
+
+      expect(feedback).to.equal('correct!');
+    });
+
+    it('should evaluate, store the id of, and provide feedback for incorrect guesses', function() {
+      const feedback = round.takeTurn('pug');
+
+      expect(feedback).to.equal('incorrect!');
+      expect(round.incorrectGuesses).to.equal('1');
+    });
   });
+
+  it('should calculate and return the percentage of correct guesses', function() {
+    round.takeTurn('sea otter');
+    round.takeTurn('gallbladder');
+    round.takeTurn('Fitzgerald');
+    const percentCorrect = round.calculatePercentCorrect();
+
+    expect(percentCorrect).to.equal(100);
+  })
 });
