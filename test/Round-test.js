@@ -34,18 +34,22 @@ describe('Round', function() {
   describe('takeTurn', function() {
 
     it('should update turns count when a turn is taken', function () {
-      expect(round.turns).to.equal(0);
-
       round.takeTurn('sea otter');
 
       expect(round.turns).to.equal(1);
     });
 
     it('should update turns count whether guess is correct or incorrect', function() {
-      round.takeTurn
+      round.takeTurn('pug');
+
+      expect(round.turns).to.equal(1);
     });
 
-    it('should ')
+    it('should update the current card to be the next card in the deck', function() {
+      round.takeTurn('sea otter');
+
+      expect(round.currentCard).to.equal(card2);
+    });
 
   });
 });
