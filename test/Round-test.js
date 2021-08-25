@@ -18,8 +18,7 @@ describe('Round', function() {
     round = new Round(deck);
   })
 
-  it.only('should hold the first card in the deck as the current card at the start of the round', function() {
-    console.log(round);
+  it('should hold the first card in the deck as the current card at the start of the round', function() {
     expect(round.currentCard).to.equal(card1);
   });
 
@@ -30,24 +29,24 @@ describe('Round', function() {
   it('should be able to return the current card', function() {
     const currentCard = round.returnCurrentCard();
 
-    expect(currentCard).to.equal(deck[0]);
+    expect(currentCard).to.equal(deck.cards[0]);
   });
 
   describe('takeTurn', function() {
 
-    it('should update turns count when a turn is taken', function () {
+    it.only('should update turns count when a turn is taken', function () {
       round.takeTurn('sea otter');
 
       expect(round.turns).to.equal(1);
     });
 
-    it('should update turns count whether guess is correct or incorrect', function() {
+    it.only('should update turns count whether guess is correct or incorrect', function() {
       round.takeTurn('pug');
 
       expect(round.turns).to.equal(1);
     });
 
-    it('should update the current card to be the next card in the deck', function() {
+    it.only('should update the current card to be the next card in the deck', function() {
       round.takeTurn('sea otter');
 
       expect(round.currentCard).to.equal(card2);
