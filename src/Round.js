@@ -21,7 +21,6 @@ class Round {
     }
 
     this.currentCard = this.deck.cards[this.turns];
-
     return feedback;
   }
 
