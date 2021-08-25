@@ -18,13 +18,29 @@ describe('Round', function() {
     round = new Round(deck);
   })
 
-  it('should hold the first card in the deck as the current card at the start of the round', function() {
+  it('should be a function', function() {
+    expect(Round).to.be.a('function');
+  });
+
+  it('should be an instance of Round', function() {
+    expect(round).to.be.an.instanceof(Round);
+  });
+
+  it('should store the deck', function() {
+    expect(round.deck).to.equal(deck);
+  });
+
+  it('should store the first card in the deck as the current card at start of the round', function() {
     expect(round.currentCard).to.equal(card1);
   });
 
-  it('should default to 0 turns', function() {
+  it('should store the number of turns, with 0 as default', function() {
     expect(round.turns).to.equal(0);
-  })
+  });
+
+  it('should store the id of incorrect guesses', function() {
+    expect(round.incorrectGuesses.length).to.equal(0);
+  });
 
   it('should be able to return the current card', function() {
     const currentCard = round.returnCurrentCard();
@@ -33,8 +49,7 @@ describe('Round', function() {
   });
 
   describe('takeTurn', function() {
-
-    it('should update turns count when a turn is taken', function () {
+    it('should update the turns count when a turn is taken', function () {
       round.takeTurn('sea otter');
 
       expect(round.turns).to.equal(1);
@@ -71,9 +86,8 @@ describe('Round', function() {
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');
     round.takeTurn('Fitzgerald');
-    const percentCorrect = round.calculatePercentCorrect();
 
-    expect(percentCorrect).to.equal(100);
+    expect(round.calculatePercentCorrect()).to.equal(100);
   })
 
   it('should be able to end the round', function() {

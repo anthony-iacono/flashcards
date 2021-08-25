@@ -13,10 +13,23 @@ describe('Turn', function () {
     turn = new Turn('object', card);
   });
 
-  it('should take users\'s guess and current card as arguments', function() {
-    expect(turn.guess).to.equal('object');
-    expect(turn.card).to.equal(card);
+  it('should be a function', function() {
+    expect(Turn).to.be.a('function');
   });
+
+  it('should be an instance of Turn', function() {
+    const turn = new Turn();
+
+    expect(turn).to.be.an.instanceof(Turn);
+  });
+
+  it('should store user\'s guess', function() {
+    expect(turn.guess).to.equal('object');
+  });
+
+  it('should store the card', function() {
+    expect(turn.card).to.equal(card);
+  })
 
   it('should be able to return user\'s guess', function() {
     const guess = turn.returnGuess();
@@ -24,13 +37,13 @@ describe('Turn', function () {
     expect(guess).to.equal('object');
   });
 
-  it('should be able to return current card', function() {
+  it('should be able to return the card', function() {
     const returnedCard = turn.returnCard();
 
     expect(returnedCard.id).to.equal(card.id);
   });
 
-  it('should be able to determine whether guess is correct or incorrect', function() {
+  it('should be able to evaluate whether the guess is correct or incorrect', function() {
     const correctGuess = turn.evaluateGuess();
     turn.guess = 'function';
     const incorrectGuess = turn.evaluateGuess();
@@ -39,7 +52,7 @@ describe('Turn', function () {
     expect(incorrectGuess).to.equal(false);
   });
 
-  it('should give feedback', function() {
+  it('should be able to give feedback', function() {
     const positiveFeedback = turn.giveFeedback();
     turn.guess = 'function';
     const negativeFeedback = turn.giveFeedback();

@@ -11,11 +11,21 @@ describe('Deck', function() {
   const cards = [card1, card2, card3];
   const deck = new Deck(cards);
 
-  it('should take an array of cards as an argument', function() {
+  it('should be a function', function() {
+    expect(Deck).to.be.a('function');
+  });
+
+  it('should be an instance of Deck', function() {
+    const deck = new Deck();
+
+    expect(deck).to.be.an.instanceof(Deck);
+  });
+
+  it('should store cards', function() {
     expect(deck.cards).to.equal(cards);
   });
 
-  it('should be able to tell how many cards are in the deck', function() {
+  it('should be able to return the number of cards in the deck', function() {
     expect(deck.countCards()).to.equal(3);
   })
 })
