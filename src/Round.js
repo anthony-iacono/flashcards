@@ -1,4 +1,4 @@
-const Turn = require('./Turn.js');
+const Turn = require('./Turn');
 
 class Round {
   constructor(deck) {
