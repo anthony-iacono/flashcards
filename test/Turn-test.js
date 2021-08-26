@@ -25,6 +25,7 @@ describe('Turn', function () {
 
   it('should store user\'s guess', function() {
     expect(turn.guess).to.equal('object');
+    //test for string? maybe not
   });
 
   it('should store the card', function() {
@@ -48,8 +49,8 @@ describe('Turn', function () {
     turn.guess = 'function';
     const incorrectGuess = turn.evaluateGuess();
 
-    expect(correctGuess).to.equal(true);
-    expect(incorrectGuess).to.equal(false);
+    expect(correctGuess).to.be.true;
+    expect(incorrectGuess).to.be.false;
   });
 
   it('should be able to give feedback', function() {
@@ -60,4 +61,5 @@ describe('Turn', function () {
     expect(positiveFeedback).to.equal('correct!');
     expect(negativeFeedback).to.equal('incorrect!');
   });
+  // separate by incorrect and correct; ask instructors what preference
 });
