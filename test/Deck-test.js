@@ -23,6 +23,8 @@ describe('Deck', function() {
 
   it('should store cards', function() {
     expect(deck.cards).to.equal(cards);
+    // add test for array?
+    // add test for instanceof card
   });
 
   it('should be able to return the number of cards in the deck', function() {
