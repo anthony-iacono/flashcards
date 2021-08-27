@@ -33,3 +33,10 @@ Welcome to FlashCards! You are playing with 30 cards.
 
 ## Planning
 I used [GitHub Projects](https://github.com/anthony-iacono/flashcards/projects/2) to plan and track this project.
+
+## Contributions
+App built by
+- Anthony Iacono ([LinkedIn](https://linkedin.com/in/anthony-iacono)/[GitHub](https://github.com/anthony-iacono))
+
+Project specifications and starter files provided by 
+- Turing School of Software & Design [@turingschool](https://github.com/turingschool)
