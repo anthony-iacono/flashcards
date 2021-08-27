@@ -4,7 +4,7 @@
 FlashCards is a basic flash card simulator that runs in the command line interface (CLI). Use this app to strengthen your understanding of any subject by answering questions with each turn and getting instant feedback. In addition, you will get feedback at the end of each round to help you determine whether a deck has been mastered or requires more attention. If you answer fewer than 90% of the cards correctly, you will automatically start a new round with the same cards.
 
 ## Demo
-![68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f317a6b6231713538655469544836443777632f67697068792e676966](https://user-images.githubusercontent.com/72999840/131042280-59431b84-bc44-43b4-96f9-4967e2ce4bcc.gif)
+![flashcards](https://user-images.githubusercontent.com/72999840/131070048-e2661c89-48ff-4323-9e42-67a15715f525.gif)
 
 ## Technologies
 - JavaScript (Node.js)
