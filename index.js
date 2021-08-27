@@ -1,5 +1,5 @@
 const http = require('http');
-const data = require('./data');
+const data = require('./src/data');
 const prototypeQuestions = data.prototypeData;
 const Game = require('./src/Game.js');
 const game = new Game;

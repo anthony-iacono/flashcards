@@ -1,3 +1,5 @@
+const data = require('./data');
+const prototypeQuestions = data.prototypeData;
 const Turn = require('./Turn');
 
 class Round {
@@ -46,7 +48,7 @@ class Round {
   restartGame() {
     const Game = require('./Game');
     const game = new Game;
-    game.start();
+    game.start(prototypeQuestions);
   }
 }
 
