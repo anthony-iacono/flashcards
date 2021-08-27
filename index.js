@@ -1,9 +1,9 @@
 const http = require('http');
+const data = require('./src/data');
+const prototypeQuestions = data.prototypeData;
 const Game = require('./src/Game.js');
 const game = new Game;
 let app = http.createServer();
 
-// Start the server on port 3000
 app.listen(3000, '127.0.0.1');
-console.log('Node server running on port 3000');
-game.start();
+game.start(prototypeQuestions);
