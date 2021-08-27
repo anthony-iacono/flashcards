@@ -25,12 +25,11 @@ describe('Turn', function () {
 
   it('should store user\'s guess', function() {
     expect(turn.guess).to.equal('object');
-    //test for string? maybe not
   });
 
   it('should store the card', function() {
     expect(turn.card).to.equal(card);
-  })
+  });
 
   it('should be able to return user\'s guess', function() {
     const guess = turn.returnGuess();
@@ -61,5 +60,4 @@ describe('Turn', function () {
     expect(positiveFeedback).to.equal('correct!');
     expect(negativeFeedback).to.equal('incorrect!');
   });
-  // separate by incorrect and correct; ask instructors what preference
 });

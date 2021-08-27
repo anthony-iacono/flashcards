@@ -16,7 +16,7 @@ describe('Round', function() {
   beforeEach(function() {
     deck = new Deck([card1, card2, card3]);
     round = new Round(deck);
-  })
+  });
 
   it('should be a function', function() {
     expect(Round).to.be.a('function');
@@ -88,7 +88,7 @@ describe('Round', function() {
     round.takeTurn('Fitzgerald');
 
     expect(round.calculatePercentCorrect()).to.equal(100);
-  })
+  });
 
   it('should be able to end the round', function() {
     round.takeTurn('sea otter');
@@ -96,6 +96,6 @@ describe('Round', function() {
     round.takeTurn('Fitzgerald');
     const message = round.endRound();
 
-    expect(message).to.equal(`** Round over! ** You answered 100% of the questions correctly!`);
+    expect(message).to.equal(`** Round over! ** Congratulations! You answered 100% of the questions correctly!`);
   });
 });

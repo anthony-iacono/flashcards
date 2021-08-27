@@ -30,9 +30,23 @@ class Round {
   }
 
   endRound() {
-    const message = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
-    console.log(message);
-    return message;
+    const percentCorrect = this.calculatePercentCorrect();
+    let message;
+    if (percentCorrect < 90) {
+      message = `** Round over! ** You answered ${percentCorrect}% of the questions correctly. Let's try again!`
+      console.log(message);
+      this.restartGame()
+    } else {
+      message = `** Round over! ** Congratulations! You answered ${percentCorrect}% of the questions correctly!`;
+      console.log(message);
+      return message;
+    }
+  }
+
+  restartGame() {
+    const Game = require('./Game');
+    const game = new Game;
+    game.start();
   }
 }
 
