@@ -13,11 +13,7 @@ FlashCards is a basic flash card simulator that runs in the command line interfa
 
 ## Setup
 1. Clone down the repo 
-2. Change to the app directory and install the library dependencies by running:
-
-```zsh
-npm install
-```
+2. Change to the app directory, then install the library dependencies by running `npm install`.
 3. Run `node index.js`. The message similar to the following should display in your terminal: 
 
 ```bash
